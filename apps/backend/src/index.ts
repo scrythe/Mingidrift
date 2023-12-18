@@ -1,35 +1,37 @@
 import Fastify, { FastifyInstance, RouteShorthandOptions } from "fastify";
 // import { Server, IncomingMessage, ServerResponse } from "http";
 
-const server: FastifyInstance = Fastify({});
+let port = (process.env.PORT || 3000) as number;
+const enviroment = process.env.enviroment || "development";
 
-const opts: RouteShorthandOptions = {
-  schema: {
-    response: {
-      200: {
-        type: "object",
-        properties: {
-          pong: {
-            type: "string",
-          },
-        },
+const envToLogger = {
+  production: true,
+  development: {
+    transport: {
+      target: "pino-pretty",
+      options: {
+        translateTime: "HH:MM:ss Z",
+        ignore: "pid,hostname",
       },
     },
   },
 };
 
-server.get("/ping", opts, async (_request, _reply) => {
-  return { pong: "it worked!" };
+const fastify = Fastify({
+  logger: envToLogger[enviroment as "production" | "development"] || true,
+});
+
+fastify.get("/", () => {
+  return { message: "Hello World!" };
 });
 
 const start = async () => {
   try {
-    await server.listen({ port: 3000 });
-
+    fastify.listen({ port });
     // const address = server.server.address();
     // const port = typeof address === "string" ? address : address?.port;
   } catch (err) {
-    server.log.error(err);
+    fastify.log.error(err);
     process.exit(1);
   }
 };

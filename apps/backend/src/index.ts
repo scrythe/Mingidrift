@@ -1,5 +1,4 @@
-import Fastify, { FastifyInstance, RouteShorthandOptions } from "fastify";
-// import { Server, IncomingMessage, ServerResponse } from "http";
+import Fastify from "fastify";
 
 let port = (process.env.PORT || 3000) as number;
 const enviroment = process.env.enviroment || "development";
@@ -27,9 +26,7 @@ fastify.get("/", () => {
 
 const start = async () => {
   try {
-    fastify.listen({ port });
-    // const address = server.server.address();
-    // const port = typeof address === "string" ? address : address?.port;
+    fastify.listen({ port, host: "0.0.0.0" });
   } catch (err) {
     fastify.log.error(err);
     process.exit(1);

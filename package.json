@@ -1,0 +1,27 @@
+{
+  "name": "mingi-drive",
+  "version": "1.0.0",
+  "description": "pixel 3d threejs javascript socket multiplayer car game with device orientation",
+  "keywords": [
+    "pixel",
+    "3d",
+    "threejs",
+    "javascript",
+    "socket",
+    "multiplayer",
+    "car",
+    "game",
+    "device orientation"
+  ],
+  "author": "Magomed Alimkhanov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/scrythe/Mingi-Drive/issues"
+  },
+  "homepage": "https://github.com/scrythe/Mingi-Drive#readme",
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.14.0",
+    "@typescript-eslint/parser": "^6.14.0",
+    "eslint": "^8.56.0"
+  }
+}

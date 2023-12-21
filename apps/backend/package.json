@@ -1,5 +1,6 @@
 {
   "name": "backend",
+  "private": "true",
   "scripts": {
     "start": "node dist/index.js",
     "dev": "tsx watch src/index.ts",

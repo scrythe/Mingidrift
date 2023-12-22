@@ -1,9 +1,9 @@
 import type { Component } from "solid-js";
-
-// import logo from "./logo.svg";
 // import styles from "./App.module.css";
+const { animate } = await import("game");
 
 const App: Component = () => {
+  animate();
   return <section></section>;
 };
 

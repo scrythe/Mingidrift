@@ -1,7 +1,8 @@
 import Fastify from "fastify";
 
-let port = (process.env.PORT || 3000) as number;
-const enviroment = process.env.enviroment || "development";
+const port = parseInt(process.env.PORT ?? "3000");
+const enviroment =
+  process.env.NODE_ENV == "production" ? "production" : "development";
 
 const envToLogger = {
   production: true,
@@ -16,8 +17,10 @@ const envToLogger = {
   },
 };
 
+console.log("looolahahhaha");
+
 const fastify = Fastify({
-  logger: envToLogger[enviroment as "production" | "development"] || true,
+  logger: envToLogger[enviroment],
 });
 
 fastify.get("/", () => {

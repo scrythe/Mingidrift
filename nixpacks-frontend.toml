@@ -1,0 +1,14 @@
+[phases.setup]
+nixPkgs = [
+    'nodejs_18',
+    'pnpm-8_x',
+]
+
+[phases.install]
+cmds = ['pnpm i --frozen-lockfile']
+
+[phases.build]
+cmds = ['pnpm -F game build', 'pnpm -F frontend build']
+
+[start]
+cmd = 'pnpm -F frontend serve'

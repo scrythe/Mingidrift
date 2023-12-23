@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "pixel 3d threejs javascript socket multiplayer car game with device orientation",
   "scripts": {
+    "docker:frontend": "pnpm docker:frontend:build && pnpm docker:frontend:run",
+    "docker:frontend:build": "nixpacks build . -c nixpacks-frontend.toml -n mingi-drive-frontend",
+    "docker:frontend:run": "docker run -it -p 3000:3000 mingi-drive-frontend",
     "docker:backend": "pnpm docker:backend:build && pnpm docker:backend:run",
     "docker:backend:build": "nixpacks build . -c nixpacks-backend.toml -n mingi-drive-backend",
     "docker:backend:run": "docker run -it -p 3000:3000 mingi-drive-backend"

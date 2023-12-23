@@ -8,7 +8,7 @@ nixPkgs = [
 cmds = ['pnpm i --frozen-lockfile']
 
 [phases.build]
-cmds = ['pnpm -F backend build']
+cmds = ['pnpm build']
 
 [start]
-cmd = 'pnpm -F backend start'
+cmd = 'pnpm start'

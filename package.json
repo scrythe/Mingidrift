@@ -3,10 +3,12 @@
   "version": "1.0.0",
   "description": "pixel 3d threejs javascript socket multiplayer car game with device orientation",
   "scripts": {
-    "compose": "docker compose up",
-    "docker": "pnpm docker:build && pnpm docker:run",
-    "docker:build": "docker build -t mingidrift .",
-    "docker:run": "docker run -it mingidrift"
+    "compose": "docker compose build && docker compose up",
+    "docker:frontend": "APP=frontend PORTS=8080:80 pnpm docker:app",
+    "docker:backend": "APP=backend PORTS=3000:3000 pnpm docker:app",
+    "docker:app": "pnpm docker:build && pnpm docker:run",
+    "docker:build": "docker build -f apps/$APP/Dockerfile -t mingidrift-$APP .",
+    "docker:run": "docker run -p $PORTS -it mingidrift-$APP"
   },
   "keywords": [
     "pixel",

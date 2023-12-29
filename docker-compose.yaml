@@ -2,13 +2,13 @@ services:
   frontend:
     build:
       context: .
-      target: frontend
+      dockerfile: apps/frontend/Dockerfile
     ports:
       - "8080:80"
 
   backend:
     build:
       context: .
-      target: backend
+      dockerfile: apps/backend/Dockerfile
     ports:
       - "3000:3000"

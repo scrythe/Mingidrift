@@ -1,5 +1,5 @@
 {
-  "name": "mingi-drive",
+  "name": "mingidrift",
   "version": "1.0.0",
   "description": "pixel 3d threejs javascript socket multiplayer car game with device orientation",
   "scripts": {
@@ -24,9 +24,9 @@
   "author": "Magomed Alimkhanov",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/scrythe/Mingi-Drive/issues"
+    "url": "https://github.com/scrythe/Mingidrift/issues"
   },
-  "homepage": "https://github.com/scrythe/Mingi-Drive#readme",
+  "homepage": "https://github.com/scrythe/Mingidrift#readme",
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^6.14.0",
     "@typescript-eslint/parser": "^6.14.0",

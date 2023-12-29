@@ -1,0 +1,14 @@
+services:
+  frontend:
+    build:
+      context: .
+      target: frontend
+    ports:
+      - "8080:80"
+
+  backend:
+    build:
+      context: .
+      target: backend
+    ports:
+      - "3000:3000"

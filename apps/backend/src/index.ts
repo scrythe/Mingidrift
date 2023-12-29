@@ -17,7 +17,8 @@ const envToLogger = {
   },
 };
 
-console.log("looolahahhaha");
+console.log("hohoo");
+console.log(enviroment);
 
 const fastify = Fastify({
   logger: envToLogger[enviroment],

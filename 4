@@ -1,0 +1,25 @@
+import {
+  Scene,
+  PerspectiveCamera,
+  WebGLRenderer,
+  BoxGeometry,
+  MeshBasicMaterial,
+  Mesh,
+} from "three";
+
+class Game {
+  private scene: Scene
+  private camera: PerspectiveCamera
+
+  constructor() {
+    const scene = new Scene();
+    const camera = new PerspectiveCamera(
+      75,
+      window.innerWidth / window.innerHeight,
+      0.1,
+      1000,
+    );
+
+    const renderer = new WebGLRenderer();
+  }
+}

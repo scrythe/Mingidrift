@@ -1,10 +1,11 @@
 import { Scene, PerspectiveCamera, WebGLRenderer } from "three";
-import Component3D from "./object";
+import NodeManager from "./node-managar";
 
 class Game {
   private scene: Scene;
   private camera: PerspectiveCamera;
   private renderer: WebGLRenderer;
+  private nodeManager: NodeManager;
 
   constructor() {
     this.scene = new Scene();
@@ -17,22 +18,26 @@ class Game {
     this.renderer = new WebGLRenderer();
     this.renderer.setSize(window.innerWidth, window.innerHeight);
     document.body.append(this.renderer.domElement);
-    this.setup();
-    requestAnimationFrame(() => this.animate());
+    this.nodeManager = new NodeManager(this.scene);
+    this.Initialize();
+    requestAnimationFrame(() => this.Update());
   }
 
-  private setup() {
-    this.camera.position.z = 5;
-    const object = new Component3D();
-    this.scene.add(object.cube);
+  private Initialize() {
+    this.nodeManager.Initialize();
     this.camera.position.z = 5;
   }
 
-  private animate() {
+  private Update() {
+    this.nodeManager.Update();
+    this.Render();
+    requestAnimationFrame(() => this.Update());
+  }
+
+  private Render() {
     // this.cube.rotation.x += 0.01;
     // this.cube.rotation.y += 0.01;
     this.renderer.render(this.scene, this.camera);
-    requestAnimationFrame(() => this.animate());
   }
 }
 

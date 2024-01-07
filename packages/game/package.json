@@ -5,7 +5,9 @@
   "main": "dist/index.js",
   "scripts": {
     "dev": "vite",
-    "build": "tsup src/index.ts --format esm --dts"
+    "build": "tsup src/game.ts --format esm --dts",
+    "vite-build": "vite build",
+    "vite-preview": "vite preview"
   },
   "devDependencies": {
     "@types/three": "^0.159.0",

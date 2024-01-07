@@ -1,11 +1,13 @@
 import { Scene, PerspectiveCamera, WebGLRenderer } from "three";
 import NodeManager from "./node-managar";
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 
 class Game {
   private scene: Scene;
   private camera: PerspectiveCamera;
   private renderer: WebGLRenderer;
   private nodeManager: NodeManager;
+  private controls: OrbitControls;
 
   constructor() {
     this.scene = new Scene();
@@ -19,17 +21,23 @@ class Game {
     this.renderer.setSize(window.innerWidth, window.innerHeight);
     document.body.append(this.renderer.domElement);
     this.nodeManager = new NodeManager(this.scene);
+    this.controls = new OrbitControls(this.camera, this.renderer.domElement);
     this.Initialize();
     requestAnimationFrame(() => this.Update());
   }
 
   private Initialize() {
     this.nodeManager.Initialize();
+    this.camera.position.x = 10;
+    this.camera.position.y = 5;
     this.camera.position.z = 5;
+    this.controls.update();
+    // this.renderer.setPixelRatio(0.25);
   }
 
   private Update() {
     this.nodeManager.Update();
+    this.controls.update();
     this.Render();
     requestAnimationFrame(() => this.Update());
   }

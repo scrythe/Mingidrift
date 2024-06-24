@@ -1,0 +1,20 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "tsx yeet",
+      "type": "pwa-node",
+      "request": "launch",
+      "program": "${file}",
+      "runtimeExecutable": "${workspaceFolder}/apps/backend/node_modules/.bin/tsx",
+      "sourceMaps": true,
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "skipFiles": [
+        "<node_internals>/**",
+        "${workspaceFolder}/node_modules/**"
+      ],
+      "cwd": "${workspaceFolder}"
+    }
+  ]
+}

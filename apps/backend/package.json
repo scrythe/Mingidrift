@@ -3,8 +3,8 @@
   "private": "true",
   "scripts": {
     "start": "node dist/index.js",
-    "dev": "tsx watch src/index.ts",
-    "build": "tsup src/index.ts"
+    "dev": "tsx watch --inspect src/index.ts",
+    "build": "tsup src/index.ts --sourcemap"
   },
   "dependencies": {
     "fastify": "^4.25.1",

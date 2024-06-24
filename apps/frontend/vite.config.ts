@@ -9,7 +9,7 @@ export default defineConfig({
     For more info see https://github.com/thetarnav/solid-devtools/tree/main/packages/extension#readme
     */
     // devtools(),
-    solidPlugin(),
+    solidPlugin({ dev: true }),
   ],
   server: {
     port: 3000,

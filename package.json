@@ -1,14 +1,13 @@
 {
   "name": "mingidrift",
+  "private": true,
   "version": "1.0.0",
   "description": "pixel 3d threejs javascript socket multiplayer car game with device orientation",
+  "type": "module",
   "scripts": {
-    "compose": "docker compose build && docker compose up",
-    "docker:frontend": "APP=frontend PORTS=8080:80 pnpm docker:app",
-    "docker:backend": "APP=backend PORTS=3000:3000 pnpm docker:app",
-    "docker:app": "pnpm docker:build && pnpm docker:run",
-    "docker:build": "docker build -f apps/$APP/Dockerfile -t mingidrift-$APP .",
-    "docker:run": "docker run -p $PORTS -it mingidrift-$APP"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
   },
   "keywords": [
     "pixel",
@@ -28,8 +27,11 @@
   },
   "homepage": "https://github.com/scrythe/Mingidrift#readme",
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^6.20.0",
-    "@typescript-eslint/parser": "^6.20.0",
-    "eslint": "^8.56.0"
+    "@types/three": "^0.165.0",
+    "typescript": "^5.2.2",
+    "vite": "^5.3.1"
+  },
+  "dependencies": {
+    "three": "^0.165.0"
   }
 }

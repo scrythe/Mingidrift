@@ -1,8 +1,0 @@
-services:
-  - type: web
-    name: Mingidrift
-    runtime: node
-    repo: https://github.com/scrythe/Mingi-Drive
-    branch: main
-    buildCommand: pnpm install --frozen-lockfile && pnpm run --filter=backend build
-    startCommand: pnpm run --filter=backend start
